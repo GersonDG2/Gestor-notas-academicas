@@ -1,0 +1,51 @@
+Proceso CalculadoraPromedio
+
+    Definir suma_notas Como Real
+    Definir cantidad_notas Como Entero
+    Definir promedio Como Real
+    Definir nota_texto Como Texto
+
+    suma_notas <- 0
+    cantidad_notas <- 0
+
+    Escribir "PROGRAMA PARA CALCULAR PROMEDIO"
+    Escribir "Por favor, ingresa tus notas una por una."
+    Escribir "Para terminar y calcular el promedio, escribe la palabra 'fin'."
+    Escribir ""
+
+    Repetir
+        Escribir "Ingresa una nota (o 'fin' para terminar):"
+        Leer nota_texto
+
+        Si nota_texto != "fin" Entonces
+            Si EsNumero(nota_texto) Entonces
+                Definir nota_numerica Como Real
+                nota_numerica <- ConvertirANumero(nota_texto)
+                
+                suma_notas <- suma_notas + nota_numerica
+                cantidad_notas <- cantidad_notas + 1
+                
+                Escribir "-> Nota registrada correctamente."
+            Sino
+                Escribir "Error: La entrada no es un número válido. Por favor, inténtalo de nuevo."
+            FinSi
+        FinSi
+        
+        Escribir ""
+
+    Hasta Que nota_texto = "fin"
+
+    Escribir ""
+    Escribir "CALCULO DE RESULTADOS"
+    
+    Si cantidad_notas > 0 Entonces
+        promedio <- suma_notas / cantidad_notas
+        
+        Escribir "Número total de notas ingresadas: ", cantidad_notas
+        Escribir "La suma de todas las notas es: ", suma_notas
+        Escribir "El promedio final de las notas es: ", promedio
+    Sino
+        Escribir "No se ingresaron notas, no se puede calcular un promedio."
+    FinSi
+
+FinProceso
