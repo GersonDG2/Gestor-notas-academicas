@@ -6,6 +6,10 @@ from contar_aprobados import ejecutar as opcion_4
 from buscar_curso import ejecutar as opcion_5
 from actualizar_nota import ejecutar as opcion_6
 from eliminar_curso import ejecutar as opcion_7
+from ordenar_por_nota import ejecutar as opcion_8
+from ordenar_por_nombre import ejecutar as opcion_9
+from cola_revision import ejecutar as opcion_11
+from historial_cambios import ejecutar as opcion_12
 
 def mostrar_menu():
     print("====== GESTOR DE NOTAS ACADÉMICAS ======")
@@ -48,15 +52,15 @@ def main():
         elif opcion == 7:
             opcion_7()
         elif opcion == 8:
-            print("Opción en construcción")
+            opcion_8()
         elif opcion == 9:
-            print("Opción en construcción")
+            opcion_9()
         elif opcion == 10:
             print("Opción en construcción")
         elif opcion == 11:
-            print("Opción en construcción")
+            opcion_11()
         elif opcion == 12:
-            print("Opción en construcción")
+            opcion_12()
         elif opcion == 13:
             print("Gracias por usar el Gestor de Notas Académicas. ¡Hasta pronto!")
             break

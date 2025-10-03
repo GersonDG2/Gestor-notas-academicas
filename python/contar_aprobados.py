@@ -7,7 +7,7 @@ def ejecutar():
     aprobados = 0
     reprobados = 0
     for c in cursos:
-        if c["nota"] >= 11:
+        if c["nota"] >= 60:
             aprobados += 1
         else:
             reprobados += 1

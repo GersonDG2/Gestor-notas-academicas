@@ -1,4 +1,5 @@
 from almacenamiento_datos import cursos
+from historial_cambios import agregar_cambio
 
 def ejecutar():
     if not cursos:
@@ -24,5 +25,7 @@ def ejecutar():
     if nueva < 0 or nueva > 20:
         print("La nota debe estar entre 0 y 20")
         return
+    nota_anterior = cursos[indice]["nota"]
     cursos[indice]["nota"] = nueva
+    agregar_cambio(f"Actualizada nota de {nombre}: {nota_anterior} -> {nueva}")
     print("Nota actualizada")
