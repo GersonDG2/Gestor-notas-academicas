@@ -14,15 +14,13 @@ El menú del sistema incluye las siguientes funcionalidades:
 - **Calcular promedio general:** Calcula y muestra el promedio de todas las notas registradas.
 - **Contar cursos aprobados y reprobados:** Muestra un recuento de los cursos según su estado (aprobado ≥60, reprobado <60).
 - **Buscar curso por nombre (búsqueda lineal):** Busca un curso específico en la lista mediante búsqueda secuencial.
-- **Actualizar nota de un curso:** Modifica la calificación de un curso ya existente (0-20). Registra el cambio en el historial.
+- **Actualizar nota de un curso:** Modifica la calificación de un curso ya existente (0-100). Registra el cambio en el historial.
 - **Eliminar un curso:** Borra un curso de la lista. Registra el cambio en el historial.
 - **Ordenar cursos por nota (burbuja):** Ordena la lista de cursos de menor a mayor nota usando el algoritmo de ordenamiento burbuja.
 - **Ordenar cursos por nombre (inserción):** Ordena la lista alfabéticamente por el nombre del curso usando el algoritmo de ordenamiento por inserción.
+- **Buscar curso por nombre (búsqueda binaria):** Realiza una búsqueda optimizada por nombre (requiere lista ordenada).
 - **Simular cola de solicitudes de revisión:** Gestiona una cola (FIFO) de peticiones para revisar notas. Permite agregar solicitudes, atender la siguiente y ver la cola completa.
 - **Mostrar historial de cambios (pila):** Muestra los últimos cambios realizados (registros, actualizaciones y eliminaciones) en orden LIFO (del más reciente al más antiguo).
-
-#### Funcionalidades pendientes
-- **Buscar curso por nombre (búsqueda binaria):** Realiza una búsqueda optimizada por nombre (requiere lista ordenada).
 
 ### Requisitos no funcionales
 - El sistema se ejecuta únicamente en consola con Python.
@@ -96,3 +94,21 @@ Creé un sistema para manejar solicitudes de revisión de notas usando una cola.
 - Los menús anidados se hacen con otro while, solo hay que tener cuidado con los breaks.
 - Siempre hay que validar los datos antes de usarlos, si no el programa puede fallar.
 - Es bueno mostrar mensajes claros cuando no hay datos para que el usuario sepa qué pasa.
+
+#### 5. Búsqueda binaria de cursos
+Finalmente implementé la búsqueda binaria que estaba pendiente. Es una forma más rápida de buscar cursos comparada con la búsqueda lineal.
+
+**Lo que me costó:**
+- Entender por qué la lista tiene que estar ordenada para que funcione la búsqueda binaria.
+- El concepto de dividir la lista a la mitad me confundió al principio.
+- Calcular el índice del medio con la fórmula (izquierda + derecha) // 2 me tomó tiempo entenderlo.
+- Me preocupaba que al ordenar la lista se modificara el orden original de los cursos.
+- Las comparaciones de mayor que, menor que e igual me hicieron equivocarme varias veces.
+
+**Lo que aprendí:**
+- La búsqueda binaria es mucho más eficiente que la lineal cuando hay muchos datos, porque va descartando la mitad de las opciones en cada paso.
+- Tuve que hacer una copia de la lista con un for y append() para no modificar la original, así no se desordena la lista principal.
+- Reutilicé el algoritmo de inserción que ya había hecho antes para ordenar la copia alfabéticamente.
+- El operador // hace división entera, o sea que te da solo la parte entera sin decimales.
+- Entendí que hay tres casos: si el elemento del medio es igual lo encontraste, si es menor buscas a la derecha, si es mayor buscas a la izquierda.
+- Me di cuenta de que la búsqueda binaria solo funciona con listas ordenadas, si no está ordenada no sirve.

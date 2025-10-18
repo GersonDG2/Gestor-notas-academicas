@@ -8,6 +8,7 @@ from actualizar_nota import ejecutar as opcion_6
 from eliminar_curso import ejecutar as opcion_7
 from ordenar_por_nota import ejecutar as opcion_8
 from ordenar_por_nombre import ejecutar as opcion_9
+from buscar_binario import ejecutar as opcion_10
 from cola_revision import ejecutar as opcion_11
 from historial_cambios import ejecutar as opcion_12
 
@@ -56,7 +57,7 @@ def main():
         elif opcion == 9:
             opcion_9()
         elif opcion == 10:
-            print("Opción en construcción")
+            opcion_10()
         elif opcion == 11:
             opcion_11()
         elif opcion == 12:

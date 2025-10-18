@@ -18,12 +18,12 @@ def ejecutar():
         print("Curso no encontrado")
         return
     try:
-        nueva = float(input("Nueva nota (0 a 20): ").strip())
+        nueva = float(input("Nueva nota (0 a 100): ").strip())
     except ValueError:
         print("Nota inválida")
         return
-    if nueva < 0 or nueva > 20:
-        print("La nota debe estar entre 0 y 20")
+    if nueva < 0 or nueva > 100:
+        print("La nota debe estar entre 0 y 100")
         return
     nota_anterior = cursos[indice]["nota"]
     cursos[indice]["nota"] = nueva
