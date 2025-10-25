@@ -10,3 +10,11 @@ def ejecutar():
     print("Historial de cambios (más reciente primero):")
     for i in range(len(historial) - 1, -1, -1):
         print(f"{len(historial) - i}. {historial[i]}")
+
+
+
+
+
+
+
+

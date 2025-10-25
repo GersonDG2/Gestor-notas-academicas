@@ -41,7 +41,7 @@ def main():
         if opcion == 1:
             opcion_1()
         elif opcion == 2:
-            opcion_2()
+            opcion_2() #
         elif opcion == 3:
             opcion_3()
         elif opcion == 4:

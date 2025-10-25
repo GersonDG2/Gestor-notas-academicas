@@ -11,7 +11,6 @@
 4. Menú Principal
 5. Descripción de Funcionalidades
 6. Ejemplos de Uso
-7. Preguntas Frecuentes
 
 ---
 
